@@ -1,0 +1,83 @@
+/*** MIXINS ***/
+.border-radius (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius:    @radius;
+  border-radius:         @radius;
+
+  -moz-background-clip:    padding;
+  -webkit-background-clip: padding-box;
+  background-clip:         padding-box;
+}
+
+
+
+
+/***************************
+          CLASS 
+ **************************/
+
+/** GRIDS **/
+.column(@font-color, @flot-left: left; @width : 25%; @width-tablet : 47.4%; @width-mobile : 100%; @width-img : 100%) {
+    color: @font-color;
+    float: @flot-left;
+    width:  @width;
+    img{
+      width:  @width-img;
+      height: auto;
+    }
+    // TABLET
+    @media @tablet{
+      width: @width-tablet;
+      padding: 1%;
+      max-height: 590px;
+    }
+    // MOBILE 
+    @media @mobile{
+      width: @width-mobile;
+      float: none;
+    }
+}
+
+/** CONTENTS **/
+.content(@font-color, @padding : 20px; @border-width: 20%; @margin : 11px; @font-size : @font-size--large){
+    padding: 0 @padding;
+    h2{
+      font-size:  @font-size;
+      line-height: 1.2;
+      margin: @margin 0;
+      font-weight: 100;
+      text-transform: uppercase;
+    }
+    hr{
+      width: @border-width;
+      border: 1px solid @font-color;
+      margin: @margin 0;
+      display: block;
+    }
+    // TABLET
+    @media @tablet{
+      padding: 20px 20px 40px;
+    }
+    @media @mobile{
+      padding: 20px 20px 40px;
+    }
+}
+
+
+
+
+/** BOUTTON **/
+
+.boutton{
+    display: block;
+    padding: 11px;
+    background: @font-color;
+    max-width: 100px;
+    text-align: center;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    .border-radius();
+}
+
+
